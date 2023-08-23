@@ -1,0 +1,287 @@
+model = nnc.getModelDescription;
+model
+
+model = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    TrackingModelCount: 14
+        MarkerSetCount: 4
+        RigidBodyCount: 2
+         SkeletonCount: 0
+       ForcePlateCount: 0
+           DeviceCount: 0
+           CameraCount: 8
+             RigidBody: [1×2 struct]
+             MarkerSet: [1×4 struct]
+
+model.RigidBody(1)
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+        Name: 'Ground'
+          ID: 1
+    ParentID: -1
+     OffsetX: 0
+        Type: 1
+
+model.MarkerSet(1).Markers
+
+ans = 
+
+  1×3 <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> array with fields:
+
+    Label
+
+model.MarkerSet(1).Markers(1)
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+    Label: 'Marker1'
+
+frame = nnc.getFrame
+
+frame = 
+
+  <a href="matlab:helpPopup NatNetML.FrameOfMocapData" style="font-weight:bold">FrameOfMocapData</a> with properties:
+
+                         iFrame: 631911
+                     fTimestamp: 5.2765e+03
+     CameraMidExposureTimestamp: 53066347312
+    CameraDataReceivedTimestamp: 53066389676
+              TransmitTimestamp: 53066392982
+                     bRecording: 0
+         bTrackingModelsChanged: 0
+                       Timecode: 601
+               TimecodeSubframe: 0
+                    nMarkerSets: 3
+                  nOtherMarkers: 2
+                   nRigidBodies: 3
+                     nSkeletons: 0
+                       nMarkers: 8
+                   nForcePlates: 0
+                       nDevices: 0
+                     MarkerSets: [1×1 NatNetML.MarkerSetData[]]
+                   OtherMarkers: [1×1 NatNetML.Marker[]]
+                    RigidBodies: [1×1 NatNetML.RigidBodyData[]]
+                      Skeletons: [1×1 NatNetML.SkeletonData[]]
+                 LabeledMarkers: [1×1 NatNetML.Marker[]]
+                    ForcePlates: [1×1 NatNetML.ForcePlateData[]]
+                        Devices: [1×1 NatNetML.DeviceData[]]
+
+frame.MarkerSets
+
+ans = 
+
+  <a href="matlab:helpPopup NatNetML.MarkerSetData[]" style="font-weight:bold">MarkerSetData[]</a> with properties:
+
+            Length: 1000
+        LongLength: 1000
+              Rank: 1
+          SyncRoot: [1×1 NatNetML.MarkerSetData[]]
+        IsReadOnly: 0
+       IsFixedSize: 1
+    IsSynchronized: 0
+
+frame.MarkerSets(1)
+
+ans = 
+
+  <a href="matlab:helpPopup NatNetML.MarkerSetData" style="font-weight:bold">MarkerSetData</a> with properties:
+
+    MarkerSetName: [1×1 System.String]
+          Markers: [1×1 NatNetML.Marker[]]
+         nMarkers: 3
+
+frame.MarkerSets(1).Markers(1)
+
+ans = 
+
+  <a href="matlab:helpPopup NatNetML.Marker" style="font-weight:bold">Marker</a> with properties:
+
+            ID: -1
+             x: 0.1747
+             y: 0.0176
+             z: 0.0166
+          size: 0
+    parameters: 0
+      residual: 0
+
+frame.MarkerSets(1).Markers(1).x
+
+ans =
+
+  <a href="matlab:helpPopup single" style="font-weight:bold">single</a>
+
+    0.1747
+
+model.RigidBody(2)
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+        Name: 'RigidBody'
+          ID: 2
+    ParentID: -1
+     OffsetX: 0
+        Type: 1
+
+model.RigidBody(3)
+{Index exceeds the number of array elements. Index must not exceed 2.
+} 
+model.Markerset(1)
+{Unrecognized field name "Markerset".
+} 
+model.MarkerSet(2)
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+           Name: 'TR'
+    MarkerCount: 1
+        Markers: [1×1 struct]
+
+model.MarkerSet(3)
+
+ans = 
+
+  <a href="matlab:helpPopup struct" style="font-weight:bold">struct</a> with fields:
+
+           Name: 'RigidBody'
+    MarkerCount: 3
+        Markers: [1×3 struct]
+
+frame.MarkerSets(2).Markers(1)
+
+ans = 
+
+  <a href="matlab:helpPopup NatNetML.Marker" style="font-weight:bold">Marker</a> with properties:
+
+            ID: -1
+             x: 0.4963
+             y: 0.0199
+             z: 0.2103
+          size: 0
+    parameters: 0
+      residual: 0
+
+frame.MarkerSets(2)
+
+ans = 
+
+  <a href="matlab:helpPopup NatNetML.MarkerSetData" style="font-weight:bold">MarkerSetData</a> with properties:
+
+    MarkerSetName: [1×1 System.String]
+          Markers: [1×1 NatNetML.Marker[]]
+         nMarkers: 3
+
+frame.MarkerSets(2).Markers(2)
+
+ans = 
+
+  <a href="matlab:helpPopup NatNetML.Marker" style="font-weight:bold">Marker</a> with properties:
+
+            ID: -1
+             x: 0.7464
+             y: 0.0185
+             z: 0.2078
+          size: 0
+    parameters: 0
+      residual: 0
+
+frame.MarkerSets(2).Markers
+
+ans = 
+
+  <a href="matlab:helpPopup NatNetML.Marker[]" style="font-weight:bold">Marker[]</a> with properties:
+
+            Length: 200
+        LongLength: 200
+              Rank: 1
+          SyncRoot: [1×1 NatNetML.Marker[]]
+        IsReadOnly: 0
+       IsFixedSize: 1
+    IsSynchronized: 0
+
+frame.MarkerSets(1).Markers
+
+ans = 
+
+  <a href="matlab:helpPopup NatNetML.Marker[]" style="font-weight:bold">Marker[]</a> with properties:
+
+            Length: 200
+        LongLength: 200
+              Rank: 1
+          SyncRoot: [1×1 NatNetML.Marker[]]
+        IsReadOnly: 0
+       IsFixedSize: 1
+    IsSynchronized: 0
+
+frame.LabeledMarkers
+
+ans = 
+
+  <a href="matlab:helpPopup NatNetML.Marker[]" style="font-weight:bold">Marker[]</a> with properties:
+
+            Length: 1000
+        LongLength: 1000
+              Rank: 1
+          SyncRoot: [1×1 NatNetML.Marker[]]
+        IsReadOnly: 0
+       IsFixedSize: 1
+    IsSynchronized: 0
+
+frame.LabeledMarkers.Marker(1)
+{No appropriate method, property, or field 'Marker' for class 'NatNetML.Marker[]'.
+} 
+diary
+for i = 1:model.RigidBodyCount
+model.RigidBody(i).Name
+frame.RigidBodies(i).x
+frame.RigidBodies(i).y
+end
+
+ans =
+
+    'Ground'
+
+
+ans =
+
+  <a href="matlab:helpPopup single" style="font-weight:bold">single</a>
+
+    0.0753
+
+
+ans =
+
+  <a href="matlab:helpPopup single" style="font-weight:bold">single</a>
+
+    0.0192
+
+
+ans =
+
+    'RigidBody'
+
+
+ans =
+
+  <a href="matlab:helpPopup single" style="font-weight:bold">single</a>
+
+     0
+
+
+ans =
+
+  <a href="matlab:helpPopup single" style="font-weight:bold">single</a>
+
+     0
+
+diary
