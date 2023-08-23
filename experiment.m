@@ -18,15 +18,50 @@ setup
 % Spawn client
 NNClient = NatNetClient()
 
-% Peek at assets/data, used for setup
-assets = NNClient.getModelDescription
-frame = NNClient.getFrame
+% Peek at assets, used for setup
+assets = NNClient.getModelDescription 
+% a dict where keys=lbls & vals=IDs seems the be the way to go
+
+session_data = 
+data_template = struct(
+    "block_num" = {},
+    "trial_num" = {},
+    "task" = {},
+    "hand" = {},
+    "target_location" = {},
+    "target_reached" = {},
+    "trial_start_time" = {},
+    "trial_end_time" = {},
+    "reaction_time" = {},
+    "movement_time" = {}
+)
+    
 
 
+% -_-_ Task sequence params _-_- %
 
 
+% get randomized block order
+task = {'point', 'grasp'};
+task = task(randperm(numel(task)));
+task = [task, task];
 
+hand = {'left', 'right'};
+hand = hand(randperm(numel(hand)));
+hand = [hand, hand];
 
+blocks = struct(
+    'task', task,
+    'hand', hand
+);
+
+% Desired trial count
+trials_per_block = 30
+
+% Create list of targ locations for each trial
+% This will be randomized at the beginning of each block
+target_locations = {'left', 'right'}
+target_locations = repelem(target_locations, trials_per_block / 2)
 
 
 
